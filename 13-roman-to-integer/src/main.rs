@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 pub fn roman_to_int(s: String) -> i32 {
     let mut result: i32 = 0;
-    
+
     let roman_subtractions = HashMap::from([
         ("CM", 900),
         ("CD", 400),
@@ -24,7 +24,7 @@ pub fn roman_to_int(s: String) -> i32 {
 
     let mut subtractions_handled: bool = false;
     let mut s_clone = s.clone();
-    
+
     'outer: while !subtractions_handled {
         for (r, i) in &roman_subtractions {
             if s_clone.contains(r) {
@@ -44,7 +44,7 @@ pub fn roman_to_int(s: String) -> i32 {
             }
         }
     }
-    
+
     result
 }
 
